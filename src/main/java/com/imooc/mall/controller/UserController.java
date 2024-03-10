@@ -10,10 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 描述：     用户控制器
@@ -103,7 +100,7 @@ public class UserController {
     /**
      * 管理员登录接口
      */
-    @PostMapping("/adminLogin")
+    @RequestMapping("/adminLogin")
     @ResponseBody
     public ApiRestResponse adminLogin(@RequestParam("userName") String userName,
             @RequestParam("password") String password, HttpSession session)
